@@ -33,7 +33,7 @@ func AddEmployeeIntuit(name, ssn, city, pin, line, phone, familyName string) (st
 		return "Error in Retrieving your booking info", errors.New("RETIREIVING ERROR")
 	}
 	body, _ = json.Marshal(&res.Body)
-	req, err = http.NewRequest("POST", dao.DIRECTLY_INTUIT+"/v3/company/<realmID>/employee", bytes.NewBuffer(body))
+	req, err = http.NewRequest("POST", dao.DIRECTLY_LIVE_CUSTOMER_BACKEND+"updateEmploye", bytes.NewBuffer(body))
 	if err != nil {
 		fmt.Println("Error in creating new call", err)
 	}
